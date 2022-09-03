@@ -25,4 +25,6 @@ int main() {
     ave = round(ave * 10) / 10;
 
     cout << ave;
+
+    return 0;
 }
