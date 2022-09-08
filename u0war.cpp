@@ -75,9 +75,36 @@ int suitRank (string card) {
         return 1;
 }
 
+int welcome() {
+
+    cout << R"( _____)" << endl;
+    cout << R"(|A .  | _____)" << endl;
+    cout << R"(| /.\ ||A ^  | _____)" << endl;
+    cout << R"(|(_._)|| / \ ||A _  | _____)" << endl;
+    cout << R"(|  |  || \ / || ( ) ||A_ _ |)" << endl;
+    cout << R"(|____V||  .  ||(_'_)||( v )|)" << endl;
+    cout << R"(       |____V||  |  || \ / |)" << endl;
+    cout << R"(              |____V||  .  |)" << endl;
+    cout << R"(                     |____V|)" << endl;
+         
+         
+         
+         
+         
+            
+            
+            
+
+    //cout << "Welcome to the game of war! \n" << knight << endl;
+    
+    return 0;
+}
+
 int main() {
 
     vector<string> deck = newDeck();
+
+    welcome();
 
     for (int i = 0; i < 52; i++) {
         cout << deck[i] << "   ";
