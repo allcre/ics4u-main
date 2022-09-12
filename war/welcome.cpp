@@ -7,6 +7,7 @@ using namespace std;
 int welcome() {
 
     // ascii art 
+    /*
     cout << R"( _____)" << endl;
     cout << R"(|A .  | _____)" << endl;
     cout << R"(| /.\ ||A ^  | _____)" << endl;
@@ -16,6 +17,7 @@ int welcome() {
     cout << R"(       |____V||  |  || \ / |)" << endl;
     cout << R"(              |____V||  .  |)" << endl;
     cout << R"(                     |____V|)" << endl;
+    */
 
     cout << "\nWelcome to the game of war! \n" << endl;
   
