@@ -80,7 +80,7 @@ int main() {
     
     while(!gameOver()) {
 
-        if () // check if a player needs to shuffle discard into main deck
+         // check if a player needs to shuffle discard into main deck
 
         oneRound(); // pass 2 player or bot ig
         gameOver();
