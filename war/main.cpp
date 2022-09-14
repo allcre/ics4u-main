@@ -81,7 +81,7 @@ void oneRound() {
     int num;
     for (int j = 0; j < 4; j++) {
         cin >> num;
-        fourCards[0][j] = deck1[num]; 
+        fourCards[0][j] = deck1[num - 1]; 
     }
 
     cout << "\n" << name2 << ", your cards are:" << endl;
@@ -94,7 +94,7 @@ void oneRound() {
     
     for (int l = 0; l < 4; l++) {
         cin >> num;
-        fourCards[1][l] = deck2[num]; 
+        fourCards[1][l] = deck2[num - 1]; 
     }
 
     // battle starts
@@ -105,8 +105,7 @@ void oneRound() {
         string card2 = fourCards[1][m];
 
         cout << "\n";
-        cout << name1 << " plays the " << card1 << endl;
-        cout << name2 << " plays the " << card2 << endl;
+        cout << card1 << " vs " << card2;
 
         bool winner1; // true if player 1 wins, false if player 2 wins
 
