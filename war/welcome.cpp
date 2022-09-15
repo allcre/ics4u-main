@@ -24,7 +24,7 @@ int welcome() {
     string yn = "a"; // temp filler 
 
     // loop to print instructions 
-    while (yn != "Y" || "N") {
+    while (yn != "y" || "n") {
       cout << "Would you like to read the instructions? (y or n)" << endl;
       cin >> yn;
       
