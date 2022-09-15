@@ -56,13 +56,14 @@ void setup() {
   
 }
 
-bool gameOver() {     
+int gameOver() {     
+    // 0 = game not over, 1 = p1 won, 2 = p2 won
     if (deck1.size() + discard1.size() < 4)
-        return true;
+        return 2;
     else if (deck2.size() + discard2.size() < 4)
-        return true;
+        return 1;
     else 
-        return false;
+        return 0;
 
 }
 
@@ -170,7 +171,7 @@ int main() {
     // removes the first half of the deck from the first player's deck
     deck1.erase(deck1.begin(), deck1.begin() + 26);
     
-    //while(!gameOver()) {
+    //while(gameOver() == 0) {
 
          // check if a player needs to shuffle discard into main deck
 
