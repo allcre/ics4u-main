@@ -5,7 +5,7 @@
 using namespace std;
 
 // global deck vectors
-vector<string> deck1 = newDeck(); 
+vector<string> deck1; 
 vector<string> deck2;
 vector<string> discard1;
 vector<string> discard2;
@@ -14,7 +14,7 @@ int counter2 = 0;
 
 string name1;
 string name2;
-bool over = false;
+bool over = false; // for playing again
 
 void setup() {
 
@@ -24,6 +24,8 @@ void setup() {
     cout << "Player 2, enter your name: ";
     cin >> name2;
 
+    deck1 = newDeck();
+    
     cout << name1 << " vs " << name2 << ", let the game begin!" << endl;
 
 /*

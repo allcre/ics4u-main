@@ -25,11 +25,12 @@ int welcome() {
     string yn = "a"; // temp filler 
 
     // loop to print instructions 
-    while (yn != "y" || "n") {
+    while (true) {
       cin >> yn;
       
       if (yn == "y") {
         instructions();
+        return 0;
       }
       else if (yn == "n")
         return 0;

@@ -18,3 +18,5 @@ If there is one file:
 $ make fileName
 $ ./fileName
 ```
+
+ctrl + c at anytime to quit
