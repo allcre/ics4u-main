@@ -24,7 +24,7 @@ void setup() {
     cout << "Player 2, enter your name: ";
     cin >> name2;
 
-    cout << "Ok " << name1 << ", you will be playing against " << name2 << endl;
+    cout << name1 << " vs " << name2 << ", let the game begin!" << endl;
 
 /*
     cout << "Ok " << name << ", you have two options:" << endl;
