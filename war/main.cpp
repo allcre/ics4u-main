@@ -105,7 +105,7 @@ void oneRound() {
         string card2 = fourCards[1][m];
 
         cout << "\n";
-        cout << card1 << " vs " << card2;
+        cout << card1 << " vs " << card2 << endl;
 
         bool winner1; // true if player 1 wins, false if player 2 wins
 
@@ -142,6 +142,10 @@ void oneRound() {
             cout << "no";
 
     }
+
+    // removes the cards that will be played from decks
+    deck1.erase(deck1.begin(), deck1.begin() + 4);
+    deck2.erase(deck2.begin(), deck2.begin() + 4);
 
     cout << "\n";
     cout << name1 << ", you have " << deck1.size() << " cards left in your playing pile and " << discard1.size() << " cards in your discard pile" << endl;
