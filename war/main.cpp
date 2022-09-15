@@ -56,8 +56,9 @@ void setup() {
   
 }
 
+// checks if the game is over, if so declares a winner 
 int gameOver() {     
-    // 0 = game not over, 1 = p1 won, 2 = p2 won
+    // return values: 0 = game not over, 1 = p1 won, 2 = p2 won
     if (deck1.size() + discard1.size() < 4)
         return 2;
     else if (deck2.size() + discard2.size() < 4)
