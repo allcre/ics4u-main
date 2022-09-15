@@ -144,7 +144,7 @@ void oneRound() {
 
     }
 
-    // removes the cards that will be played from decks
+    // removes the cards that were played from decks
     deck1.erase(deck1.begin(), deck1.begin() + 4);
     deck2.erase(deck2.begin(), deck2.begin() + 4);
 
