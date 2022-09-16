@@ -10,7 +10,7 @@ vector<string> shuffle(vector<string> deck) {
 
     int n = deck.size(); // gets size of the deck
 
-    srand (time(NULL)); // ensures that rand() generates new random numbers
+    srand(time(NULL)); // ensures that rand() generates new random numbers
 
     for (int i = 0; i < n - 1; i++) {
         int j = i + rand() % (n - i); // generates a random index number between i and the end of the deck

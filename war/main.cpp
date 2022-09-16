@@ -25,7 +25,7 @@ void setup() {
     cin >> name2;
 
     deck1 = newDeck();
-    
+
     cout << name1 << " vs " << name2 << ", let the game begin!" << endl;
 
 /*
@@ -154,7 +154,7 @@ void oneRound() {
     cout << "\n";
     cout << name1 << ", you have " << deck1.size() << " cards left in your playing pile and " << discard1.size() << " cards in your discard pile" << endl;
     cout << name2 << ", you have " << deck2.size() << " cards left in your playing pile and " << discard2.size() << " cards in your discard pile" << endl;
-
+    cout << "========================== new round ==========================" << endl;
 
 }
 
@@ -174,13 +174,30 @@ int main() {
     // removes the first half of the deck from the first player's deck
     deck1.erase(deck1.begin(), deck1.begin() + 26);
     
-    //while(gameOver() == 0) {
+    while(gameOver() == 0) {
 
-         // check if a player needs to shuffle discard into main deck
+        // check if a player needs to shuffle discard into main deck
+        if (deck1.size() < 4) {
+            for (int k = 0; k < discard1.size(); k++) {
+                deck1.push_back(discard1[k]);
+            }
+            discard1.erase(discard1.begin(), discard1.begin() + discard1.size());
+            shuffle(deck1);
+            cout << name1 << ", your cards have been shuffled" << endl;
+        } 
+
+        if (deck2.size() < 4) {
+            for (int l = 0; l < discard2.size(); l++) {
+                deck2.push_back(discard2[l]);
+            }
+            discard2.erase(discard2.begin(), discard2.begin() + discard2.size());
+            shuffle(deck2);
+            cout << name2 << ", your cards have been shuffled" << endl;
+        } 
 
         oneRound(); // pass 2 player or bot ig
         gameOver();
-    //} 
+    } 
   
     /*
     for (int i = 0; i < 26; i++) {
