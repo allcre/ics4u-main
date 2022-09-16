@@ -9,3 +9,4 @@ int suitRank (string card);
 int welcome();
 vector<string> newDeck();
 vector<string> shuffle(vector<string> deck);
+void oneRound();
