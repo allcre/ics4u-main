@@ -101,5 +101,9 @@ void oneRound() {
     cout << "\n";
     cout << name1 << ", you have " << deck1.size() << " cards left in your playing pile and " << discard1.size() << " cards in your discard pile" << endl;
     cout << name2 << ", you have " << deck2.size() << " cards left in your playing pile and " << discard2.size() << " cards in your discard pile" << endl;
+    
+    // fix
+    cout << "Press enter to continue" << endl;
+    cin.ignore();
 
 }
