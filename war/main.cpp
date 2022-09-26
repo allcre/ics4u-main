@@ -27,34 +27,6 @@ void setup() {
     deck1 = newDeck();
 
     cout << name1 << " vs " << name2 << ", let the game begin!" << endl;
-
-/*
-    cout << "Ok " << name << ", you have two options:" << endl;
-    cout << "Option 1: Play against your friend" << endl;
-    cout << "Option 2: Play against a bot" << endl;
-    cout << "1 or 2 :";
-
-    string name2 = "andrussy"; // could make an array with random names to give to bots
-
-    int n = 0;
-
-    while (n != (1 || 2)) {
-        cin >> n;
-        if (n == 1) {
-            cout << "What is your friend's name?" << endl;
-            cin >> name2;
-            cout << "Ok, you will be playing against " << name2 << endl;
-            return 0;
-        } 
-        else if (n == 2) {
-            cout << "Ok, you will be playing against " << name2 << endl;
-            return 0;
-        }
-        else {
-            cout << "Please enter 1 or 2:";
-        }
-    }
-*/
   
 }
 
@@ -110,14 +82,39 @@ int main() {
         oneRound(); // pass 2 player or bot ig
         gameOver();
     } 
-  
-    /*
-    for (int i = 0; i < 26; i++) {
-        cout << deck1[i] << "  1 " << endl;
-        cout << deck2[i] << "   2" << endl;
-        //cout << faceRank(deck1[i]) << " " << suitRank(deck1[i]) << endl;
-    }
 
-    cout << deck1.size() << deck2.size(); */
+    if (gameOver() == 1) {
+        cout << "Congrats " << name1 << "! You are the winner!" << endl;
+    }
+    else if (gameOver() == 2) {
+        cout << "Congrats " << name2 << "! You are the winner!" << endl;
+    }
     
+    cout << "Game Stats:" << endl;
+    cout << "The game lasted " << counter1 + counter2 << " rounds." << endl;
+    cout << name1 << " won " << counter1 << "rounds" << '(' << counter1/(counter1+counter2) << "%)" << endl;
+    cout << name2 << " won " << counter2 << "rounds" << '(' << counter2/(counter1+counter2) << "%)" << endl;
+
+    do {
+        cout << "\nWould you like to play again? (y or n)" << endl;
+
+        string yn = "a"; // temp filler 
+
+        // loop to accpet input
+        while (true) {
+        cin >> yn;
+        
+        if (yn == "y") {
+            instructions();
+            return 0;
+        }
+        else if (yn == "n")
+            return 0;
+        else 
+            cout << "That's not a valid option, please try again." <<  endl;
+        }
+        
+        return 0;
+    }
+    while (true);
 }

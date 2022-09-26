@@ -53,6 +53,7 @@ void oneRound() {
             fourCards[1][l] = deck2[num - 1]; 
         }
     }
+    while (check4(fourCards, 2) == 0);
 
     // battle starts
 

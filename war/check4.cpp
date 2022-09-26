@@ -21,9 +21,7 @@ int check4(string fourCards[2][4], int player) {
             for (int j = 0; j < 4; j++) {
                 if (fourCards[0][i] == deck1[j]) {
                     sum += j+1;
-                    //cout << "i:" << i << "j:" << j << "sum:" << sum << endl;
                     product *= j+1;
-                    //out << "i:" << i << "j:" << j << "product:" << product << endl;
                 }
             }
         }
@@ -31,7 +29,7 @@ int check4(string fourCards[2][4], int player) {
     else { // for player 2
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
-                if (fourCards[0][i] == deck2[j]) {
+                if (fourCards[1][i] == deck2[j]) {
                     sum += j+1;
                     product *= j+1;
                 }
@@ -43,7 +41,7 @@ int check4(string fourCards[2][4], int player) {
         return 1; // good to go
     }
     else {
-        cout << "else" << sum << "   " << product;
+        cout << "That's not a valid input. Make sure you're entering 4 unique numbers from 1-4, seperated by spaces or eneters" << endl;
         return 0;
     }
 }
