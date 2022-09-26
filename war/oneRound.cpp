@@ -34,9 +34,6 @@ void oneRound() {
         
         for (int j = 0; j < 4; j++) {
             cin >> num;
-            if isdigit(num) {
-                cout << "  ";
-            }
             fourCards[0][j] = deck1[num - 1]; 
         }
     }
@@ -48,11 +45,13 @@ void oneRound() {
         cout << k + 1 << ": " << deck2[k] << endl;
     }  
 
-    cout << "\nWhat order do you want to play your cards in (e.g. 3 1 4 2): ";
-    
-    for (int l = 0; l < 4; l++) {
-        cin >> num;
-        fourCards[1][l] = deck2[num - 1]; 
+    do {
+        cout << "\nWhat order do you want to play your cards in (e.g. 3 1 4 2): ";
+        
+        for (int l = 0; l < 4; l++) {
+            cin >> num;
+            fourCards[1][l] = deck2[num - 1]; 
+        }
     }
 
     // battle starts

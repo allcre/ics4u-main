@@ -21,9 +21,9 @@ int check4(string fourCards[2][4], int player) {
             for (int j = 0; j < 4; j++) {
                 if (fourCards[0][i] == deck1[j]) {
                     sum += j+1;
-                    cout << "i:" << i << "j:" << j << "sum:" << sum << endl;
+                    //cout << "i:" << i << "j:" << j << "sum:" << sum << endl;
                     product *= j+1;
-                    cout << "i:" << i << "j:" << j << "product:" << product << endl;
+                    //out << "i:" << i << "j:" << j << "product:" << product << endl;
                 }
             }
         }
