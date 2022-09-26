@@ -27,13 +27,20 @@ void oneRound() {
         cout << i + 1 << ": " << deck1[i] << endl;
     }  
 
-    cout << "\nWhat order do you want to play your cards in (e.g. 3 1 4 2): ";
-    
     int num;
-    for (int j = 0; j < 4; j++) {
-        cin >> num;
-        fourCards[0][j] = deck1[num - 1]; 
+
+    do {
+        cout << "\nWhat order do you want to play your cards in (e.g. 3 1 4 2): ";
+        
+        for (int j = 0; j < 4; j++) {
+            cin >> num;
+            if isdigit(num) {
+                cout << "  ";
+            }
+            fourCards[0][j] = deck1[num - 1]; 
+        }
     }
+    while (check4(fourCards, 1) == 0);
 
     cout << "\n" << name2 << ", your cards are:" << endl;
 

@@ -10,3 +10,4 @@ int welcome();
 vector<string> newDeck();
 vector<string> shuffle(vector<string> deck);
 void oneRound();
+int check4(string fourCards[2][4], int player);
