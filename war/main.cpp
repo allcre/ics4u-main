@@ -69,7 +69,7 @@ int main() {
                 deck1.push_back(discard1[k]);
             }
             discard1.erase(discard1.begin(), discard1.begin() + discard1.size());
-            shuffle(deck1);
+            deck1 = shuffle(deck1);
             cout << name1 << ", your cards have been shuffled" << endl;
         } 
 
@@ -78,7 +78,7 @@ int main() {
                 deck2.push_back(discard2[l]);
             }
             discard2.erase(discard2.begin(), discard2.begin() + discard2.size());
-            shuffle(deck2);
+            deck2 = shuffle(deck2);
             cout << name2 << ", your cards have been shuffled" << endl;
         } 
 
