@@ -7,10 +7,11 @@ First enter the folder with cd Documents/folderName
 Then: 
 
 ```
-$ g++ *.cpp -o xxx
+$ g++ -std=c++11 *.cpp -o xxx
 $ ./xxx
 ```
 xxx can be any name?
+-std=c++11 is only sometimes needed
 
 If there is one file:
 
