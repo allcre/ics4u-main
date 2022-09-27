@@ -14,7 +14,6 @@ int counter2 = 0;
 
 string name1;
 string name2;
-bool over = false; // for playing again
 
 void setup() {
 
@@ -49,6 +48,10 @@ int main() {
     setup();
 
     deck1 = shuffle(deck1);
+    discard1.clear(); // clearing discard piles
+    discard2.clear();
+    counter1 = 0; // resetting counters
+    counter2 = 0;
 
     // dealing the deck to both players;
     // deals the first half of the shuffled deck to the second player
@@ -79,42 +82,39 @@ int main() {
             cout << name2 << ", your cards have been shuffled" << endl;
         } 
 
-        oneRound(); // pass 2 player or bot ig
+        oneRound();
         gameOver();
     } 
 
     if (gameOver() == 1) {
-        cout << "Congrats " << name1 << "! You are the winner!" << endl;
+        cout << "\nCongrats " << name1 << "! You are the winner!" << endl;
     }
     else if (gameOver() == 2) {
-        cout << "Congrats " << name2 << "! You are the winner!" << endl;
+        cout << "\nCongrats " << name2 << "! You are the winner!" << endl;
     }
     
     cout << "Game Stats:" << endl;
-    cout << "The game lasted " << counter1 + counter2 << " rounds." << endl;
-    cout << name1 << " won " << counter1 << "rounds" << '(' << counter1/(counter1+counter2) << "%)" << endl;
-    cout << name2 << " won " << counter2 << "rounds" << '(' << counter2/(counter1+counter2) << "%)" << endl;
+    cout << "The game lasted " << counter1 + counter2 << " rounds" << endl;
+    cout << name1 << " won " << counter1 << " rounds " << endl;
+    cout << name2 << " won " << counter2 << " rounds " << endl;
 
+    bool cont = false;
     do {
         cout << "\nWould you like to play again? (y or n)" << endl;
 
         string yn = "a"; // temp filler 
 
-        // loop to accpet input
-        while (true) {
+        // loop to accept input
         cin >> yn;
         
         if (yn == "y") {
-            instructions();
-            return 0;
+            main();
+            cont = true;
         }
         else if (yn == "n")
             return 0;
         else 
             cout << "That's not a valid option, please try again." <<  endl;
-        }
-        
-        return 0;
     }
-    while (true);
+    while (!cont);
 }
