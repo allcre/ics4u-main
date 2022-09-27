@@ -12,9 +12,11 @@ vector<string> discard2;
 int counter1 = 0; // counters keep track of wins for game stats
 int counter2 = 0;
 
+// players' names
 string name1;
 string name2;
 
+// gets player names
 void setup() {
 
     cout << "Player 1, please enter your name: ";
@@ -47,7 +49,7 @@ int main() {
     cout << "\n";
     setup();
 
-    deck1 = shuffle(deck1);
+    deck1 = shuffle(deck1); // new shuffled deck
     discard1.clear(); // clearing discard piles
     discard2.clear();
     counter1 = 0; // resetting counters
@@ -66,24 +68,24 @@ int main() {
         // check if a player needs to shuffle discard into main deck
         if (deck1.size() < 4) {
             for (int k = 0; k < discard1.size(); k++) {
-                deck1.push_back(discard1[k]);
+                deck1.push_back(discard1[k]); // moves discarded cards to main pile
             }
-            discard1.erase(discard1.begin(), discard1.begin() + discard1.size());
-            deck1 = shuffle(deck1);
+            discard1.clear(); // clears discard pile
+            deck1 = shuffle(deck1); // shuffles deck
             cout << name1 << ", your cards have been shuffled" << endl;
         } 
 
-        if (deck2.size() < 4) {
+        if (deck2.size() < 4) { // for player 2
             for (int l = 0; l < discard2.size(); l++) {
                 deck2.push_back(discard2[l]);
             }
-            discard2.erase(discard2.begin(), discard2.begin() + discard2.size());
+            discard2.clear();
             deck2 = shuffle(deck2);
             cout << name2 << ", your cards have been shuffled" << endl;
         } 
 
-        oneRound();
-        gameOver();
+        oneRound(); // one round of the game
+        gameOver(); // check if the game is over
     } 
 
     if (gameOver() == 1) {
@@ -93,11 +95,13 @@ int main() {
         cout << "\nCongrats " << name2 << "! You are the winner!" << endl;
     }
     
+    // prints game stats
     cout << "Game Stats:" << endl;
     cout << "The game lasted " << counter1 + counter2 << " rounds" << endl;
     cout << name1 << " won " << counter1 << " rounds " << endl;
     cout << name2 << " won " << counter2 << " rounds " << endl;
 
+    // loop to ask to play again
     bool cont = false;
     do {
         cout << "\nWould you like to play again? (y or n)" << endl;

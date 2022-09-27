@@ -21,24 +21,25 @@ void oneRound() {
 
     cout << "\n" << name1 << ", your cards are:" << endl;
     
-    string fourCards[2][4];
+    string fourCards[2][4]; // array for cards that will be battling this round
 
     for (int i = 0; i < 4; i++) {
-        cout << i + 1 << ": " << deck1[i] << endl;
+        cout << i + 1 << ": " << deck1[i] << endl; // print options
     }  
 
-    int num;
+    int num; // stores players' choices for order of cards
 
     do {
         cout << "\nWhat order do you want to play your cards in (e.g. 3 1 4 2): ";
         
         for (int j = 0; j < 4; j++) {
             cin >> num;
-            fourCards[0][j] = deck1[num - 1]; 
+            fourCards[0][j] = deck1[num - 1]; // populates array with cards that will be played (in order)
         }
     }
-    while (check4(fourCards, 1) == 0);
+    while (check4(fourCards, 1) == 0); // checks that inputs are valid
 
+    // repeat for player 2
     cout << "\n" << name2 << ", your cards are:" << endl;
 
     for (int k = 0; k < 4; k++) {
@@ -67,13 +68,13 @@ void oneRound() {
 
         bool winner1; // true if player 1 wins, false if player 2 wins
 
-        if (faceRank(card1) > faceRank(card2))
+        if (faceRank(card1) > faceRank(card2)) // compares face values
             winner1 = true;
 
         else if (faceRank(card1) < faceRank(card2))
             winner1 = false;
         
-        else if (faceRank(card1) == faceRank(card2)) {
+        else if (faceRank(card1) == faceRank(card2)) { // compares suit values if tie
             if (suitRank(card1) > suitRank(card2))
                 winner1 = true;
             else if (suitRank(card1) < suitRank(card2))
@@ -86,9 +87,9 @@ void oneRound() {
 
         if (winner1) {
             cout << name1 << " wins this round" << endl;
-            discard1.push_back(fourCards[0][m]);
+            discard1.push_back(fourCards[0][m]); // adds cards to their discard pile 
             discard1.push_back(fourCards[1][m]);
-            counter1++;
+            counter1++; // increase win counter
         }
         else if (!winner1) {
             cout << name2 << " wins this round" << endl;
