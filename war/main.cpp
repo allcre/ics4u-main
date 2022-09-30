@@ -24,13 +24,18 @@ void setup() {
     cout << "Player 1, please enter your name: ";
     cin >> name1;
 
+    cin.clear(); 
+    cin.ignore(10000, '\n');
+
     cout << "Player 2, enter your name: ";
     cin >> name2;
 
     deck1 = newDeck();
 
     cout << name1 << " vs " << name2 << ", let the game begin!" << endl;
-  
+    
+    cin.clear(); 
+    cin.ignore(10000, '\n');
 }
 
 // checks if the game is over, if so declares a winner 

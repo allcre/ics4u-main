@@ -29,17 +29,25 @@ void oneRound() {
 
     int num; // stores players' choices for order of cards
 
+    start1:
     do {
         cout << "\nWhat order do you want to play your cards in (e.g. 3 1 4 2): ";
         
         for (int j = 0; j < 4; j++) {
             cin >> num;
+
             while(!cin >> num) { // this stops letters from being accepted as input
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n'); //if the user enters a non-integer
-                cin.clear();
-                break;
+                cout << "That's not a valid input." << endl;
+                goto start1; // restarts loop
             }
+
+            if (num > 4 || num < 1) { // faster verification for numbers out of range 
+                cout << "That's not a valid input." << endl;
+                goto start1;
+            }
+
             fourCards[0][j] = deck1[num - 1]; // populates array with cards that will be played (in order)
         }
     }
@@ -52,17 +60,25 @@ void oneRound() {
         cout << k + 1 << ": " << deck2[k] << endl;
     }  
 
+    start2:
     do {
         cout << "\nWhat order do you want to play your cards in (e.g. 3 1 4 2): ";
         
         for (int l = 0; l < 4; l++) {
             cin >> num;
+
             while(!cin >> num) { // this stops letters from being accepted as input
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n'); //if the user enters a non-integer
-                cin.clear();
-                break;
+                cout << "That's not a valid input." << endl;
+                goto start2; // restarts loop
             }
+
+            if (num > 4 || num < 1) { // faster verification for numbers out of range 
+                cout << "That's not a valid input." << endl;
+                goto start1;
+            }
+
             fourCards[1][l] = deck2[num - 1]; 
         }
     }
