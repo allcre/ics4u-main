@@ -34,6 +34,12 @@ void oneRound() {
         
         for (int j = 0; j < 4; j++) {
             cin >> num;
+            while(!cin >> num) { // this stops letters from being accepted as input
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n'); //if the user enters a non-integer
+                cin.clear();
+                break;
+            }
             fourCards[0][j] = deck1[num - 1]; // populates array with cards that will be played (in order)
         }
     }
@@ -51,6 +57,12 @@ void oneRound() {
         
         for (int l = 0; l < 4; l++) {
             cin >> num;
+            while(!cin >> num) { // this stops letters from being accepted as input
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n'); //if the user enters a non-integer
+                cin.clear();
+                break;
+            }
             fourCards[1][l] = deck2[num - 1]; 
         }
     }
@@ -113,5 +125,6 @@ void oneRound() {
     cout << "Press enter to continue";
     cin.get();
     cin.get();
+    cin.clear(); // clears any input if people type a number before hitting enter
 
 }

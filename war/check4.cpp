@@ -41,7 +41,7 @@ int check4(string fourCards[2][4], int player) {
         return 1; // good to go
     }
     else {
-        cout << "That's not a valid input. Make sure you're entering 4 unique numbers from 1-4, seperated by spaces or eneters" << endl;
+        cout << "That's not a valid input. Make sure you're entering 4 unique numbers from 1-4, seperated by spaces or enters" << endl;
         return 0;
     }
 }
