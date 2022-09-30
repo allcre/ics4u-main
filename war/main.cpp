@@ -22,13 +22,10 @@ string name2;
 void setup() {
 
     cout << "Player 1, please enter your name: ";
-    cin >> name1;
-
-    cin.clear(); 
-    cin.ignore(10000, '\n');
+    getline(cin >> ws, name1);
 
     cout << "Player 2, enter your name: ";
-    cin >> name2;
+    getline(cin, name2);
 
     deck1 = newDeck();
 
