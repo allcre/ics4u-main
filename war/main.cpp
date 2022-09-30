@@ -1,3 +1,5 @@
+// War Game: Created by Allison Cretel 
+
 #include "header.h"
 #include <iostream>
 #include <string>
