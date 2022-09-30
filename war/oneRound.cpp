@@ -45,6 +45,9 @@ void oneRound() {
 
             if (num > 4 || num < 1) { // faster verification for numbers out of range 
                 cout << "That's not a valid input." << endl;
+                cin.clear();
+                cin.ignore(10000, '\n');
+    
                 goto start1;
             }
 
@@ -52,6 +55,9 @@ void oneRound() {
         }
     }
     while (check4(fourCards, 1) == 0); // checks that inputs are valid
+
+    cin.clear();
+    cin.ignore(10000, '\n');
 
     // repeat for player 2
     cout << "\n" << name2 << ", your cards are:" << endl;
@@ -76,7 +82,9 @@ void oneRound() {
 
             if (num > 4 || num < 1) { // faster verification for numbers out of range 
                 cout << "That's not a valid input." << endl;
-                goto start1;
+                cin.clear();
+                cin.ignore(10000, '\n');
+                goto start2;
             }
 
             fourCards[1][l] = deck2[num - 1]; 
@@ -138,8 +146,9 @@ void oneRound() {
     cout << name1 << ", you have " << deck1.size() << " cards left in your playing pile and " << discard1.size() << " cards in your discard pile" << endl;
     cout << name2 << ", you have " << deck2.size() << " cards left in your playing pile and " << discard2.size() << " cards in your discard pile" << endl;
     
+    cin.clear();
+    cin.ignore(10000, '\n');
     cout << "Press enter to continue";
-    cin.get();
     cin.get();
     cin.clear(); // clears any input if people type a number before hitting enter
 
