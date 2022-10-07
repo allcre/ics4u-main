@@ -11,7 +11,6 @@ using namespace std;
 // Q1
 void cubeByPointer(double *ptr) {
     *ptr = *ptr * *ptr * *ptr;
-
     cout << *ptr << endl;
 }
 
@@ -64,21 +63,21 @@ int main() {
 
     // Q4
     double a = 3;
-    double b = 4;
-    double c = 5;
+    double b = 6;
+    double c = 3;
     double sol1 = 0.0;
     double sol2 = 0.0;
     double *sol1Ptr = &sol1;
     double *sol2Ptr = &sol2;
 
-    if (quadEquation(a, b, c, sol1Ptr, sol2Ptr))
-        cout << "The roots are " << sol1 << " and " << sol2 << endl;
-    else if (!quadEquation(a, b, c, sol1Ptr, sol2Ptr))
+    if (quadEquation(a, b, c, sol1Ptr, sol2Ptr)) {
+        if (sol1 == sol2)
+            cout << "The root is " << sol1 << endl;
+        else 
+            cout << "The roots are " << sol1 << " and " << sol2 << endl;
+    }
+    else
         cout << "No roots" << endl;
-    else if (isnan(sol1))
-        cout << "The root is " << sol2 << endl;
-    else 
-        cout << "The root is " << sol1 << endl;        
 
     return 0;
 }
