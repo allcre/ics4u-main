@@ -1,6 +1,6 @@
 // Allison Cretel 
 // ICS4U-02
-// 06/10/22
+// 11/10/22
 
 #define _USE_MATH_DEFINES // for pi
  
@@ -34,6 +34,24 @@ bool quadEquation (double a, double b, double c, double *sol1, double *sol2) {
         return true;
     else 
         return false;
+}
+
+// Q5
+void swap(float *p1, float *p2) {
+    float temp;
+
+    temp = *p1;
+    *p1 = *p2;
+    *p2 = temp;
+}
+
+// Q6
+void SquareComplex(double *a, double *b) {
+    // Squares a complex number a + bi
+
+    float temp = *a;
+    *a = *a * *a - *b * *b;
+    *b = 2 * temp * *b;
 }
 
 int main() {
@@ -79,5 +97,19 @@ int main() {
     else
         cout << "No roots" << endl;
 
-    return 0;
+    // Q5
+    float x = 6;
+    float y = 10;
+    float *px = &x;
+    float *py = &y;
+    swap(px, py);
+    cout << "x is " << x << " and y is " << y << endl;
+
+    // Q6
+    double a1 = 10;
+    double b1 = 5;
+    double *aPtr = &a1;
+    double *bPtr = &b1;
+    SquareComplex(aPtr, bPtr);
+    cout << "a is " << a1 << " and b is " << b1 << endl;
 }
