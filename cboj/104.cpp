@@ -76,8 +76,42 @@ void q1c() {
         sum += arrP[i];
 
     cout << "\n" << sum << endl;
+
+    delete[] arrP;
 }
 
 void q1d() {
+    int l1, l2;
+    int *p1, *p2, *p3;
+
+    cout << "Length of first array: ";
+    cin >> l1;
+    cout << "\nLength of second array: ";
+    cin >> l2;
+
+    p1 = new int[l1];
+    p2 = new int[l2];
+    p3 = new int[l1 + l2];
+
+    cout << "Enter first array elements: " << endl;
+    for (int i = 0; i < l1; i++)
+        cin >> p1[i];
     
+    cout << "Enter second array elements: " << endl;
+    for (int i = 0; i < l2; i++)
+        cin >> p2[i];
+    
+    for (int i = 0; i < l1; i++)
+        cout << p1[i] << ' ';
+    
+    cout << "\n";
+
+    for (int i = 0; i < l2; i++)
+        cout << p2[i] << ' ';
+
+    for (int i = 0; i < l1; i++)
+        p3[i] = p1[i];
+    
+    for (int i = 0; i < l2; i++)
+        p3[i + l1] = p2[i];
 }
