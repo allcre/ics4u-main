@@ -1,6 +1,6 @@
 // Allison Cretel 
 // ICS4U-02
-// 14/10/22
+// 15/10/22
  
 #include <iostream>
 #include <cstdlib>
@@ -15,7 +15,7 @@ int main() {
     q1a();
     q1b();
     q1c();
-    
+    q1d();
     return 0;
 }
 
@@ -48,7 +48,7 @@ void q1b() {
 
     arrP = new int[length];
 
-    cout << "\nEnter elements of the array:" << endl;
+    cout << "Enter elements of the array:" << endl;
     
     for (int i = 0; i < length; i++)
         cin >> arrP[i];
@@ -75,7 +75,7 @@ void q1c() {
     for (int i = 0; i < length; i++)
         sum += arrP[i];
 
-    cout << "\n" << sum << endl;
+    cout << sum << endl;
 
     delete[] arrP;
 }
@@ -86,7 +86,7 @@ void q1d() {
 
     cout << "Length of first array: ";
     cin >> l1;
-    cout << "\nLength of second array: ";
+    cout << "Length of second array: ";
     cin >> l2;
 
     p1 = new int[l1];
@@ -100,18 +100,17 @@ void q1d() {
     cout << "Enter second array elements: " << endl;
     for (int i = 0; i < l2; i++)
         cin >> p2[i];
-    
-    for (int i = 0; i < l1; i++)
-        cout << p1[i] << ' ';
-    
-    cout << "\n";
-
-    for (int i = 0; i < l2; i++)
-        cout << p2[i] << ' ';
 
     for (int i = 0; i < l1; i++)
         p3[i] = p1[i];
     
     for (int i = 0; i < l2; i++)
         p3[i + l1] = p2[i];
+    
+    for (int i = 0; i < l1+l2; i++)
+        cout << p3[i] << ' ';
+    
+    delete[] p1;
+    delete[] p2;
+    delete[] p3;
 }
