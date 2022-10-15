@@ -2,6 +2,7 @@
 !*/
 !*.*
 *.dSYM
+*.DS_STORE
 
 # Prerequisites
 *.d
