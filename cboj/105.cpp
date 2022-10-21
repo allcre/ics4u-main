@@ -197,10 +197,47 @@ void q2() {
     delete[] matrix3;
 }
 
+// Q3
+
+void modifyArray(int b[], int ArraySize) {
+    for (int i = 0; i < ArraySize; i++) {
+        b[i] = 2*b[i];
+        cout << b[i] << ' ';
+    }
+}
+
+void modifyElement(int a) {
+    cout << 2*a << endl;
+}
+
 int main() {
     q1a();
     q1b();
     q1c();
     q2();
+
+    // Q3
+    int element[5];
+    for (int index = 0; index <= 4; index++)
+        element[index] = index;
+
+    cout << "\nEffects of passing entire array call by reference\n\n";
+    cout << "Value of the original array is \n";
+    
+    for (int x = 0; x <= 4; x++)
+        cout << element[x] << " ";
+    cout << endl;
+    
+    modifyArray (element, 5);
+
+    cout << endl << endl;
+
+    cout << "Effects of passing array element call-by-value\n\n";
+    cout << "The value of element[3] is " << element[3] << endl;
+    
+    modifyElement(element[3]);
+    
+    cout << "The value of element[3] is " << element[3] << endl;
+
     return 0;
 }
