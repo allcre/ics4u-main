@@ -71,15 +71,136 @@ void q1b() {
 
     cout << "average: " << sum / (row * column) << endl;
 
-    for (int m = 0; m < row; m++) {
+    for (int m = 0; m < row; m++)
         delete[] matrix[m];
-    }
 
     delete[] matrix;
+}
+
+void q1c() {
+    int size;
+    
+    cout << "size: ";
+    cin >> size;
+
+    int **matrix = new int *[size];
+
+    for (int i = 0; i < size; i++)
+        matrix[i] = new int[size];
+
+    for (int j = 0; j < size; j++) {
+        for (int k = 0; k < size; k++) {
+            matrix[j][k] = rand() % 1000 + 1;
+            if (j == k) 
+                cout << matrix[j][k] << " ";
+        }
+    }
+
+    for (int m = 0; m < size; m++)
+        delete[] matrix[m];
+    
+    delete[] matrix;
+}
+
+// For this question, I declared two 2d arrays with different widths and lengths. 
+// The new 3rd array containing the elements from the first and second array has the same width as the first array. 
+void q2() {
+    int row1, row2, row3, column1, column2, column3;
+
+    cout << "\nrows of first array: ";
+    cin >> row1;
+    cout << "columns of first array: ";
+    cin >> column1;
+
+    int **matrix1 = new int *[row1];
+
+    for (int i = 0; i < row1; i++)
+        matrix1[i] = new int[column1];
+
+    cout << "first array:" << endl;
+
+    for (int j = 0; j < row1; j++) {
+        for (int k = 0; k < column1; k++) {
+            matrix1[j][k] = rand() % 1000 + 1;
+            cout << matrix1[j][k] << ' ';
+        }
+        cout << "\n";
+    }
+
+    cout << "rows of 2nd array: ";
+    cin >> row2;
+    cout << "columns of 2nd array: ";
+    cin >> column2;
+
+    int **matrix2 = new int *[row2];
+
+    for (int l = 0; l < row2; l++)
+        matrix2[l] = new int[column2];
+
+    cout << "second array:" << endl;
+    for (int m = 0; m < row2; m++) {
+        for (int n = 0; n < column2; n++) {
+            matrix2[m][n] = rand() % 1000 + 1;
+            cout << matrix2[m][n] << ' ';
+        }
+        cout << "\n";
+    }
+
+    column3 = column1;
+    row3 = ((row1 * column1) + (row2 * column2)) / column3 + 1;
+
+    int **matrix3 = new int *[row3];
+
+    for (int o = 0; o < row3; o++) 
+        matrix3[o] = new int [column3];
+
+    cout << "\n3rd array:" << endl;
+
+    for (int p = 0; p < row1; p++) {
+        for (int q = 0; q < column1; q++) {
+            matrix3[p][q] = matrix1[p][q];
+            cout << matrix3[p][q] << ' ';
+        }
+        cout << "\n";
+    }
+
+    int q = row1;
+    int r = 0;
+    int x = 0;
+
+    for (int s = 0; s < row2; s++) {
+        for (int t = 0; t < column2; t++) {
+            matrix3[q][r] = matrix2[s][t];
+
+            cout << matrix3[q][r] << ' ';
+            x++;
+            r++;
+
+            if (r % column3 == 0) {
+                r = 0;
+                q++;
+                cout << "\n";
+            }
+
+        }
+    }
+
+    for (int u = 0; u < row1; u++)
+        delete[] matrix1[u];
+    for (int v = 0; v < row2; v++)
+        delete[] matrix2[v];
+    for (int w = 0; w < row3; w++)
+        delete[] matrix3[w];
+
+    delete[] matrix1;
+    delete[] matrix2;
+    delete[] matrix3;
 }
 
 int main() {
     q1a();
     q1b();
+    q1c();
+    q2();
     return 0;
 }
