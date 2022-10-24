@@ -1,3 +1,7 @@
+// Allison Cretel 
+// ICS4U-02
+// 23/10/22
+
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -10,24 +14,20 @@ int main() {
     
     if (difference == 0) {
         if (start < 10) 
-            cout << ' ' << start;
+            cout << ' ' << start << endl;
         else 
-            cout << start;
+            cout << start << endl;
         return 0;
     }
 
     int rows = floor(sqrt(difference)) + 1;
-
-    int sol1 = (1 + sqrt(1 + 4 * difference)) / 2;
-    int sol2 = (1 - sqrt(1 + 4 * difference)) / 2;
-
-    int cols = max(sol1, sol2);
-
+    int cols = floor((1 + sqrt(1 + 4 * difference)) / 2);
+   
     int arr[rows][cols];
 
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
-            arr[i][j] = 0;
+            arr[i][j] = -1;
         }
     }
 
@@ -93,9 +93,9 @@ int main() {
         for (int n = 0; n < cols; n++) {
             if (arr[m][n] >= 10)
                 cout << arr[m][n];
-            else if (arr[m][n] != 0)
+            else if (arr[m][n] >= 0)
                 cout << ' ' << arr[m][n];
-            else
+            else if (arr[m][n] == -1)
                 cout << "  ";
             
             if (n != cols - 1)
