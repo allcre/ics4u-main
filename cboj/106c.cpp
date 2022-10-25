@@ -15,7 +15,7 @@ int main() {
 
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) 
-            arr[i][j] = 0;
+            arr[i][j] = -1;
     }
 
     int irow = 0; 
@@ -30,14 +30,14 @@ int main() {
         col = icol + 1;
 
         if (row < 0)
-            row =  size - 1;
+            row = size - 1;
         
         if (col > size - 1)
             col = 0;
         
-        if (arr[row][col] == 0)
+        if (arr[row][col] == -1)
             arr[row][col] = i;
-        else if (arr[row][col] != 0) {
+        else if (arr[row][col] != -1) {
             row = irow + 1;
             col = icol;
             arr[row][col] = i;
