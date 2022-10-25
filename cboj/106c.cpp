@@ -20,26 +20,31 @@ int main() {
 
     int irow = 0; 
     int icol = floor(size/2);
+    int row, col = 0;
 
-    arr[irow][icol] = 1;
+    int u = sum/size - size*size/2 + 0.5; // first number in square
+    arr[irow][icol] = u;
 
-    for (int i = 2; i <= size*size; i++) {
-        irow -= 1; 
-        icol += 1;
+    for (int i = u + 1; i < size*size + u + 1; i++) {
+        row = irow - 1;
+        col = icol + 1;
 
-        if (irow < 0)
-            irow =  size - 1;
+        if (row < 0)
+            row =  size - 1;
         
-        if (icol > size - 1)
-            icol = 0;
+        if (col > size - 1)
+            col = 0;
         
-        if (arr[irow][icol] == 0)
-            arr[irow][icol] = i;
-        else if (arr[irow][icol] != 0) {
-            irow += 2;
-            icol -= 1;
-            arr[irow][icol] = i;
-        }           
+        if (arr[row][col] == 0)
+            arr[row][col] = i;
+        else if (arr[row][col] != 0) {
+            row = irow + 1;
+            col = icol;
+            arr[row][col] = i;
+        } 
+
+        irow = row;
+        icol = col;          
     }
 
     for (int j = 0; j < size; j++) {
