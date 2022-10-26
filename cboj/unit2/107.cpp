@@ -19,7 +19,7 @@ int fib (int n) {
         return fib(n - 1) + fib(n - 2);
 }
 
-// ex3
+// ex 3
 void print_array_rec(int a[], int length) {
     if (length == 0)
         cout << "\t";
@@ -30,12 +30,23 @@ void print_array_rec(int a[], int length) {
     cout << a[length] << "\t";
 }
 
+// ex 4
+void init_array() {
+    int arr[10];
+    for (int i = 0; i < 10; i++) {
+        arr[i] = rand() % 50 + 1;
+    }
+}
+
 int main() {
     cout << power(2, 4) << endl;
     cout << fib(10) << endl;
 
     int arr[5] = {0, 1, 2, 3, 4};
-    print_array_rec(arr, sizeof(arr)/sizeof(arr[0]));
+    print_array_rec(arr, sizeof(arr)/sizeof(arr[0]) - 1);
+    cout << endl;
+
+    init_array();
 
     return 0;
 }
