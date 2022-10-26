@@ -25,7 +25,7 @@ int main() {
     int u = sum/size - size*size/2 + 0.5; // first number in square
     arr[irow][icol] = u;
 
-    for (int i = u + 1; i < size*size + u + 1; i++) {
+    for (int i = u + 1; i < size*size + u; i++) {
         row = irow - 1;
         col = icol + 1;
 
@@ -39,6 +39,8 @@ int main() {
             arr[row][col] = i;
         else if (arr[row][col] != -1) {
             row = irow + 1;
+                if (row == size)
+                    row = 0; 
             col = icol;
             arr[row][col] = i;
         } 
