@@ -119,7 +119,7 @@ int main() {
     print_array_rec(arr, sizeof(arr)/sizeof(arr[0]) - 1);
     cout << endl;
 
-    init_array();
+    //init_array();
 
     int length = 5;
     int *arr2 = new int[length];
