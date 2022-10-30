@@ -36,12 +36,16 @@ void print_array_rec(int a[], int length) {
 }
 
 // ex 4a
-void init_array() {
-    int arr[10];
-    for (int i = 0; i < 10; i++) {
-        arr[i] = rand() % 50 + 1;
+void init_array(int n, int a[]) {
+    if (n == 0) {
+        a[0] = rand() % 50 + 1;
     }
+    else {
+        a[n-1] = rand() % 50 + 1;
+        init_array(n - 1, a);
+    }        
 }
+
 
 // ex 4b
 void twopower(int length, int *arr) {
