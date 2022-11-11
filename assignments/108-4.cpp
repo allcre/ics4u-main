@@ -1,17 +1,29 @@
 #include <iostream>
 #include <string>
+#include <cmath>
 using namespace std;
 
-void decimalToBinary(string word1, string word2, int i) {
-    if (i == 0)
-        word2.append(getchar(word1[0])); 
+string decimalToBinary(int n, string x) {
+     if (n == 0) {
+        if (x.empty())
+            return "0";
+        else 
+            return x;
+     }
+     else {
+        x = to_string(n % 2) + x;
+        n = floor(n / 2);
+        return decimalToBinary(n, x);
+     }
+
 }
 
 int main() {
-    string word;
-    getline(cin, word);
+    int n;
+    cin >> n;
 
-    decimalToBinary(word, word, word.length());
+    string x;
+    cout << decimalToBinary(n, x) << endl;
     
     return 0;
 }
