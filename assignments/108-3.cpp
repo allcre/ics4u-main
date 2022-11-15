@@ -15,9 +15,7 @@ string reverse(string sentence, string rev, int a) {
 }
 
 bool isPalindrome(string sentence, int a) {
-    if (a == -1)
-        return true;
-    else if (a == 0) {
+    if (a <= 0) {
         if (sentence[0] == sentence[sentence.length() - 1])
             return true;
         else 
@@ -30,7 +28,6 @@ bool isPalindrome(string sentence, int a) {
             return false;
     }
 }
-
 
 int main() {
     string sentence;
