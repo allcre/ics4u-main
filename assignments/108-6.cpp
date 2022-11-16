@@ -19,7 +19,7 @@ long gcd(long x, long y) {
         return gcd(y, x % y);
 }
 
-// the fractorial of 2 numbers is x*y / gcd(x,y)
+// the lcm of 2 numbers is x*y / gcd(x,y), find fractorial from lcm of all numbers 1 - N
 long fractorial(int a[], int i) {
     if (i == 0)
         return a[0];
@@ -29,7 +29,6 @@ long fractorial(int a[], int i) {
         return (x * y / gcd(x, y));
     }
 }
- 
 
 int main() {
     int n;
