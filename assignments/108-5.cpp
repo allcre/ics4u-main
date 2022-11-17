@@ -1,8 +1,8 @@
+#include <iomanip>
 #include <iostream>
-#include <cmath>
 using namespace std;
 
-double average(int a[], int i) {
+long double average(int a[], int i) {
     if (i == 1) 
         return a[i - 1];
     else
@@ -16,9 +16,8 @@ int main() {
 
     for (int i = 0; i < n; i++)
         cin >> a[i];
-
-    double ave = floor(average(a, n) * 10) / 10;
-    cout << ave << endl;
+    
+    cout << setprecision(1) << fixed << average(a, n) << endl;
 
     return 0;
 }
